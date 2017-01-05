@@ -67,7 +67,7 @@ defmodule Day4 do
     |> Enum.map(fn ({k, list}) -> {k, length(list)}end)
     |> Enum.into(%{})
     |> Map.delete("-")
-    |> Enum.sort(fn (e1,e2) -> sorter(e1,e2)end)
+    |> Enum.sort(&sorter/2)
     |> Enum.take(5)
     |> Enum.map(fn ({k,v}) -> k end)
   end
